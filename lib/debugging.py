@@ -4,9 +4,25 @@ def say_hello(name):
 
 # print(say_hello('Kay'))
 
+# Factorial example
+
+def factorial(n):
+    product = 5
+    print(f"at the start the product is {product}")
+    while n > 1:
+        n-=1
+        print(f"we multiply by {product} by {n}")
+        product*=n
+        print(f"we get {product}")
+    
+    return product
+
+# print(factorial(5))
+
 #Exercise 2
 def encode(text, key):
     cipher = make_cipher(key)
+    print(cipher)
     ciphertext_chars = []
     for i in text:
         ciphered_char = chr(65 + cipher.index(i))
@@ -38,7 +54,7 @@ def make_cipher(key):
 
     return cipher
 
-# print(encode("theswiftfoxjumpedoverthelazydog", "secretkey"))
+print(encode("theswiftfoxjumpedoverthelazydog", "secretkey"))
 # print('EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL' == 'EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL')
 # print(decode("EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL", "secretkey"))
 # print("theswiftfoxjumpedoverthelazydog" == 'theswiftfoxjumpedoverthelazydog')
@@ -50,7 +66,6 @@ def get_most_common_letter(text):
     text = re.sub(r"[^a-zA-Z]", "", text)
     for char in text:
         counter[char] = counter.get(char, 0) + 1
-        print(counter)
     letter = sorted(counter.items(), key=lambda item: item[1])[-1][0]
     # print(counter.items())
     # print(sorted(counter.items(), key=lambda item: item[1])[-1][0])
@@ -63,4 +78,5 @@ def get_most_common_letter(text):
 # Actual:   {get_most_common_letter("the roof, the roof, the roof is on fire!")}
 # """)
 
-print(get_most_common_letter("the roof, the roof, the roof is on fire!"))
+# print(get_most_common_letter("the roof, the roof, the roof is on fire!"))
+
